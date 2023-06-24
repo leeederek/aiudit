@@ -17,7 +17,7 @@ Our answer is A(i)udit: a platform to help both developers & auditors to author,
 A(i)udit help engineers perform complex development and auditing workflows using natural language promps. Below is a description of the workflow:
 1. A user uploads their own smart contract to the platform, or describes their ideal smart contract & A(i)udit will produce one. _We currently only support EVM compatible smart contracts._
 2. A(i)udit will then ask the user if they'd like Static Analysis tests to be run and will execute those tests on the target smart contract when instructed to. The results from these tests will be exported locally and rendered in the UI. _Currently we support Static Analysis tests using Mythril & Slither._
-3. A(i)udit will then prompt the user if they would like to deploy the smart contract to a local Ethereum node for running fuzz tests. A(i)udit will bootstrap a local Ethereum node, deploy the contract, and execute Fuzz tests when instructed to. _We currently only support Ethereum for a private testnet option._
+3. A(i)udit will then prompt the user if they would like to deploy the smart contract to a local Ethereum node for running Fuzz tests. A(i)udit will bootstrap a local Ethereum node, deploy the contract, and execute Fuzz tests using Foundry when instructed to. _We currently only support Ethereum for a private testnet option._
 4. A(i)udit will export the results of the Fuzz tests into a report that is stored on-chain (IPFS).
 5. The frontend will then fetch, parse, and render the audit report for easy review, triaging, sharing, and actioning.
 6. The user can then address any vulnerabilities & repeat steps (1) through (6) until they are happy with the state of their smart contract.
