@@ -43,25 +43,25 @@ class  SlitherTestTool(BaseTool):
 
         solc_version = '0.8.9'  # Specify the desired Solidity version
 
-        library_paths = [
-            '/Users/yuchenpeng/a-i-udit-private/aiudittool/node_modules/@openzeppelin',
-            '/Users/yuchenpeng/a-i-udit-private/aiudittool/node_modules/@chainlink'
-        ] 
+        # library_paths = [
+        #     '/Users/yuchenpeng/a-i-udit-private/aiudittool/node_modules/@openzeppelin',
+        #     '/Users/yuchenpeng/a-i-udit-private/aiudittool/node_modules/@chainlink'
+        # ] 
 
-        # solc_args = '--allow-paths ' + ' '.join(library_paths)
-        solc_args = "--solc_remaps " + " @openzeppelin/=$(pwd)/node_modules/@openzeppelin/"
+        # # solc_args = '--allow-paths ' + ' '.join(library_paths)
+        # solc_args = "--solc_remaps " + " @openzeppelin/=$(pwd)/node_modules/@openzeppelin/"
 
         slither = Slither(path_to_sol_file)
 
 
-        for contract in slither.contracts:
-            print('Contract: '+ contract.name)
+        # for contract in slither.contracts:
+        #     print('Contract: '+ contract.name)
   
-        for function in contract.functions:  
-            print('Function: {}'.format(function.name))  
+        # for function in contract.functions:  
+        #     print('Function: {}'.format(function.name))  
     
-            print('\tRead: {}'.format([v.name for v in function.state_variables_read]))  
-            print('\tWritten {}'.format([v.name for v in function.state_variables_written]))
+        #     print('\tRead: {}'.format([v.name for v in function.state_variables_read]))  
+        #     print('\tWritten {}'.format([v.name for v in function.state_variables_written]))
     
     async def _arun(
         self,

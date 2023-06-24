@@ -12,11 +12,11 @@ llm = ChatOpenAI(temperature=0, openai_api_key=OPENAI_API_KEY)  # type: ignore
 if __name__ == "__main__":
     tool = SmartContractDeployerTool()
 
-    
-    # result = tool._run(
-    #     path_to_bytecode="/Users/yuchenpeng/a-i-udit-private/smart_contracts/adventurer's_coin-bin",
-    #     network="polygon_mumbai",
-    # )
+
+    result = tool._run(
+        path_to_bytecode="/Users/yuchenpeng/a-i-udit-private/smart_contracts/adventurer's_coin-bin",
+        network="polygon_mumbai",
+    )
 
     # result = tool._run(
     #     path_to_bytecode="/Users/yuchenpeng/aiudit/smart_contracts/javacoin-bin",

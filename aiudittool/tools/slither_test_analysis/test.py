@@ -20,7 +20,7 @@ if __name__ == "__main__":
         verbose=True,
     )
 
-    contract_path = "/Users/yuchenpeng/aiudit/smart_contracts/javacoin.sol"
+    contract_path = "/Users/yuchenpeng/aiudit/smart_contracts/sample.sol"
 
     question = f"compile the contract that has path {contract_path}"
     #question = f"Send a transaction of {ether_amount} ethers to {recipientAddress} on Sepolia. Give me the resulting transaction hash"
