@@ -1,4 +1,4 @@
-<img src="./assets/aiudit-logo-full-nouns.png" width="1000">
+<img src="./assets/aiudit-logo-full-nouns.jpg" width="1000">
 
 # :lock: A(i)udit (TL;DR)
 A(i)udit is an open-source tool that gracefully adds security best practices _earlier in the developer loop_ to help write safer, more secure smart contracts. A(i)udit uses LLMs and AI Agents to lower the barrier for utility and implementation of auditing tools to capture more vulnerabilities and bugs far earlier in the development process, reducing the time it takes to eventually audit and increasing the baseline code quality for a brighter, more secure web3 future.
