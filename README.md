@@ -5,7 +5,7 @@ A(i)udit is the first open-source, security-first development platform that empo
 
 Use natural language to author, audit, and deploy - all from a single platform.
 
-# Description & Motivation
+# :runner: Motivation & Description
 In 2022 alone, over $3.6 billion USD was lost due to exploits & hacks from 167 major security incidents, with attacks on the Ethereum ecosystem accounting for 55.8% ($2.01 billion USD) of total losses ([Global Web3 Security Report 2022 by BEOSIN & LegalDAO](https://beosin.com/resources/Global_Web3_Security_Report_2022_.pdf)). The data speaks for itself: building with security in mind has *never* been more important - but how do we make it easier for developers to do so? How do we expand the effectiveness of audits while streamlining how developers write and ship safe, secure code?
 
 To tackle this, we introduce A(i)udit: a platform to help both developers & auditors to author, audit, and deploy smart contracts using natural language. 
