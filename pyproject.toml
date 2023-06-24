@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "aiudittool"
+version = "0.1.0"
+description = ""
+authors = ["vivianpengnyc <yp2457@columbia.edu>"]
+readme = "README.md"
+packages = [{include = "aiudittool"}]
+
+
+[tool.poetry.dependencies]
+python = "^3.9"
+eth-brownie = "^1.19.3"
+langchain = "^0.0.160"
+openai = "^0.27.6"
+python-decouple = "^3.8"
+py-solc-x = "^1.1.1"
+vyper = {version = ">=0.3.7,<0.4.0", python = ">=3.9,<3.11"}
+typer = {extras = ["all"], version = "^0.9.0"}
+slither-analyzer = "0.8.3"
+
+[build-system]
+requires = ["poetry-core", "solc-select=0.8.19"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.poetry.scripts]
+aiudittool = "aiudittool.cli.main:app"
