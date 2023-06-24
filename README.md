@@ -40,7 +40,18 @@ Our roadmap is ambitious, we plan to invest in:
 
 [1] https://cyvers.ai/2023-web3-security-report
 
+# Usage
+## Installation
+poetry install
 
-# How its made
+npm i @openzeppelin/contracts@4.8.3
 
+poetry run python -c "import solcx; solcx.install_solc('0.8.19')"
 
+# When running the slither test, we needs to setup the following in the virtula env
+$ solc-select install <version> 
+$ solc-select versions
+$ solc-select use 0.8.19
+## Usage
+
+# need to add slither-analyzer dependency
