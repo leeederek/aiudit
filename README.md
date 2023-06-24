@@ -40,7 +40,6 @@ Our roadmap is ambitious, we plan to invest in:
 
 [1] https://cyvers.ai/2023-web3-security-report
 
-
 # Usage
 ## Installation
 poetry install
