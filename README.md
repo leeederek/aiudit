@@ -6,7 +6,7 @@ A(i)udit is an open-source tool that helps engineers incorporate security best p
 Use natural language to author, audit, and deploy - all from a single platform.
 
 # :runner: Motivation & Description
-In 2022 alone, over $3.6 billion USD was lost due to exploits & hacks from 167 major security incidents, with attacks on the Ethereum ecosystem accounting for 55.8% ($2.01 billion USD) of total losses ([Global Web3 Security Report 2022 by BEOSIN & LegalDAO](https://beosin.com/resources/Global_Web3_Security_Report_2022_.pdf)).
+In 2022 alone, over $3.6 billion USD was lost due to exploits & hacks from 167 major security incidents - with a *whopping 48.5% of these being from unaudited protocols!* ([Global Web3 Security Report 2022 by BEOSIN & LegalDAO](https://beosin.com/resources/Global_Web3_Security_Report_2022_.pdf)).
 
 *Its clear: building with security in mind has _never_ been more important - but how do we make it easier for developers to do so to bridge this gap?*
 
