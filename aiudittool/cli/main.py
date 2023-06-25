@@ -7,13 +7,14 @@ from rich.console import Console
 from rich.traceback import install
 from typing_extensions import Annotated
 
-from aiudittooltool.agents.structured_chat import get_structured_chat_agent_from_tools
-from aiudittooltool.tools import (
-    SignTransactionTool,
+from aiudittool.agents.structured_chat import get_structured_chat_agent_from_tools
+from aiudittool.tools import (
     SmartContractCompilerTool,
     SmartContractDeployerTool,
     SmartContractWriterTool,
     SmartContractTesterTool,
+    MythrilTool,
+    ViewTestToolsResult
 )
 
 install(suppress=[click])
@@ -31,6 +32,8 @@ FULL_TOOLSET = [
     SmartContractCompilerTool(),
     SmartContractDeployerTool(),
     SmartContractTesterTool(),
+    MythrilTool(),
+    ViewTestToolsResult(),
 ]
 
 SMART_CONTRACT_TOOLSET = [
@@ -38,6 +41,7 @@ SMART_CONTRACT_TOOLSET = [
     SmartContractCompilerTool(),
     SmartContractDeployerTool(),
     SmartContractTesterTool(),
+    ViewTestToolsResult(),
 ]
 
 FULL_TOOLSET = [
@@ -51,7 +55,7 @@ TOOLSET_MAP = {
 
 
 def get_agent(
-    agent_type: StructuredChatAgent,
+    agent_type: StructuredChatAgent.smart_contract,
     verbose: bool,
     model_name: str,
     temperature: float,
@@ -66,44 +70,6 @@ def get_agent(
         temperature=temperature,
     )
     return agent
-
-
-@app.command(name="query")
-def query_command(
-    query: Annotated[
-        str, typer.Argument(..., help="Your query or task for the aiudittooltool agent")
-    ],
-    agent: Annotated[
-        StructuredChatAgent,
-        typer.Option(
-            help="Specify which agent to use (default or smart_contract)",
-        ),
-    ] = StructuredChatAgent.full,
-    model_name: Annotated[
-        str,
-        typer.Option(
-            help="Specify which model to use (gpt-3.5-turbo or gpt-4)",
-        ),
-    ] = "gpt-4",
-    temperature: Annotated[
-        float,
-        typer.Option(
-            help="Specify the temperature for the model (default 0.0)",
-        ),
-    ] = 0.0,
-    verbose: Annotated[bool, typer.Option(help="Display verbose output")] = False,
-):
-    """
-    aiudittooltool agent CLI
-    """
-    console = Console()
-    try:
-        agent_instance = get_agent(agent, verbose, model_name, temperature=temperature)
-        response = agent_instance.run(query)
-        typer.echo(response)
-    except Exception as e:
-        console.print_exception(max_frames=0)
-
 
 @app.command(name="chat")
 def chat_command(
@@ -131,7 +97,10 @@ def chat_command(
     typer.echo(
         "You are now chatting with the aiudittooltool agent. Type 'exit' to finish the chat."
     )
-    agent_instance = get_agent(agent, verbose, model_name, temperature=temperature)
+    agent_instance = get_agent(agent, 
+                              verbose, 
+                              model_name, 
+                              temperature=temperature)
     try:
         while True:
             query = typer.prompt("You")
@@ -145,3 +114,15 @@ def chat_command(
 
 if __name__ == "__main__":
     app()
+
+    tools = [
+        SmartContractCompilerTool(),
+    ]
+
+    agent = initialize_agent(
+        tools=tools,
+        llm=llm,
+        agent=AgentType,
+        verbose=True,
+    )
+

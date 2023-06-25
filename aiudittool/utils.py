@@ -62,6 +62,7 @@ NETWORK_RPC_ENDPOINTS = {
     "scroll_goerli": f"https://alpha-rpc.scroll.io/l2",
     "neon_devnet": f"https://devnet.neonevm.org",
     "mantle_testnet": f"https://rpc.testnet.mantle.xyz/",
+    "ethereum_privatenet": f"http://127.0.0.1:",
 }
 
 CMC_NETWORK_NAMES = {
@@ -78,6 +79,7 @@ CMC_NETWORK_NAMES = {
     "scroll_goerli": "Scroll",
     "neon_devnet": "Neon Devnet",
     "mantle_testnet": "Mantle Testnet",
+    "ethereum_privatenet": "Ethereum Private Testnet",
 }
 
 NETWORKS = Literal[
@@ -94,6 +96,7 @@ NETWORKS = Literal[
     "scroll_goerli",
     "neon_devnet",
     "mantle_testnet",
+    "ethereum_privatenet",
 ]
 
 

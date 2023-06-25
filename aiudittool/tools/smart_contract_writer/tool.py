@@ -43,7 +43,10 @@ smart_contract_writer_chain = LLMChain(
 class SmartContractWriterToolInput(BaseModel):
     title: str = Field(description="A title for the smart contract, e.g. 'ERC20 Token'")
     description: str = Field(
-        description="A detailed description of the smart contract, including its purpose, its functions, and its variables"
+        description="""
+        use this tool when you need to create a smart contract using the description.
+        A detailed description of the smart contract, including its purpose, its functions, and its variables
+        """
     )
 
 
