@@ -6,43 +6,46 @@ A(i)udit is an open-source tool that gracefully adds security best practices _ea
 Engineers can use natural language to author, audit, and deploy - all from a single platform.
 
 # :runner: Motivation (Why?)
-In 2022 alone, over $3.6 billion USD was lost due to exploits & hacks from 167 major security incidents - with a *whopping 51.5% of these being from audited protocols!* ([Global Web3 Security Report 2022 by BEOSIN & LegalDAO](https://beosin.com/resources/Global_Web3_Security_Report_2022_.pdf)). One can conclude that audits are undeniably valuable still, but with a growing developer base & rising costs of audits, its evident that the security of our web3 future cannot rely on audits alone.
+In 2022 alone, over $3.6 billion USD was lost due to exploits & hacks from 167 major security incidents - with a *whopping 51.5% of these being from audited protocols!* ([Global Web3 Security Report 2022 by the Blockchain Security Alliance](https://beosin.com/resources/Global_Web3_Security_Report_2022_.pdf)). We do not dispute the value of audits, but they are centralized, expensive (both time & monetary), and are not enforced - the security of our web3 future cannot rely on audits alone.
 
-__And so, how do we make it easier for developers be part of the solution & incorporate a security-first mindset in their developer loop?__
+__And so, how do we make it easier for developers be part of the solution & incorporate a security-first practices earlier in their developer loop?__
 
-Our answer is A(i)udit: a platform to help both developers & auditors to author, audit, and deploy smart contracts using natural language and AI agents. 
+Our answer is A(i)udit: an all-in-one platform where engineers use natural language to author, audit, test, and deploy smart contracts to any chain & with any test. 
 * For developers, A(i)udit "shifts-left" security best practices by enabling security-specific testing and rapid prototyping to take place much earlier in the development lifecycle. **Get ramped up & familiar with security and auditing tools in your dev loop _before_ commissioning a (costly) audit.**
 * For junior auditors, A(i)udit lets you focus on finding vulnerabilities by removing the overhead of learning & managing multiple tools, programs, environments, audit report templates, and frameworks. **Hit the ground running faster & more effectively with A(i)udit.**
 
 # :blue_book: Description (What?)
-Specifically, A(i)udit is a tool that developers can use to execute complex security and auditing workflows using natural language. Below is a description of the workflow:
+Specifically, A(i)udit is a tool that developers can use to execute blockchain-specific workflows using natural language. We chose to focus specifically on security & auditing for the Hackathon. Below is a description of a sample workflow:
 1. The user uploads their own smart contract to the platform. Alternatively, a developer can use A(i)udit to help them get started on a smart contract too. _We currently only support EVM compatible smart contracts._
-2. The user can then simply ask A(i)udit to run Static Analysis tests on the target smart contract. The test results will be exported stored on IPFS using web3.storage and locally as well to be displayed in the UI. _Currently we support Static Analysis tests using Mythril & Slither._
-3. The user can then ask A(i)udit to deploy the smart contract to a local Ethereum node. A(i)udit will bootstrap a local Ethereum node, deploy the contract locally using the Council CLI from DELV. _We currently only support Ethereum for a private testnet option._
-4. THe user can then ask A(i)udit to execute Fuzz tests using Foundry on the deployed smart contract. This can be on a smart contract deployed to a local net or a live testnet.
-5. A(i)udit will export the results of the Fuzz tests into a report that is stored on-chain (IPFS).
-6. The frontend will then fetch, parse, and render the audit report for easy review, triaging, sharing, and actioning.
-7. The user can then address any vulnerabilities & repeat steps (1) through (6) until they are happy with the state of their smart contract.
-8. When prompted, A(i)udit will compile & deploy the smart contract to a live testnet (or mainnet). _We currently support Polygon zkEVM, Gnosis Chain, Ethereum, Metamask Linea, and Avalanche C-Chain)._
+2. The user can then simply ask A(i)udit to write and execute simple unit and fuzz tests. _We cannot gaurantee or vouch for the quality of the unit tests and currently only support Foundry Fuzz tests._
+3. The user can ask A(i)udit to execute static analysis tests. _Currently we support Static Analysis tests using Mythril & Slither._
+4. The user can ask the model to store the test results to IPFS using `web3.storage` for streamlined review, triage, and collaboration to address identified vulnerabilities.
+5. The user repeats steps 1-4 until no vulnerabilities are detected.
+6. The user can then ask A(i)udit to deploy the smart contract to a testnet or mainnet. _We currently only support Ethereum, Gnosis, Polygon, and a local Ethereum node as destinations._
 
 # :nut_and_bolt: How A(i)udit was born
-A(i)udit was made using <TODO>
+A(i)udit was made using the open-source [LangChain framework](https://github.com/hwchase17/langchain), which gives LLMs like ChatGPT the ability to successfully execute tasks of varying complexity. We currently support ChatGPT 3.5 but we hope to enable an end-user to use _any_ LLM they wish (ideally open-source ones).
 
-The following are some of the components for the application:
-* Frontend: <TODO>
-* AI Model: <TODO>
-* AI Agent: <TODO>
-* Agent Tools: <TODO>
-* Environment: <TODO>
-* Auditing Tools: <TODO>
-* Chains deployed: <TODO>
+##### Core components and infrastructure
+* Large Language Model (LLM): [OpenAI's ChatGPT 3.5](https://openai.com/chatgpt)
+* AI Agent: [LangChain Action Agents](https://langchain-langchain.vercel.app/docs/modules/agents/#action-agents)
+* Auditing tools: [Mythril](https://github.com/ConsenSys/mythril), [Foundry](https://github.com/foundry-rs/foundry), and [Slither](https://github.com/crytic/slither).
+* [Poetry](https://python-poetry.org): A simple python package and dependency management system
+
+##### Agent Tools
+* `mythril_tool`: Used for running static analyses on smart contracts. Returns the path to the results (a `.txt` file) that will be stored on IPFS.
+* `slither_test_analysis`: Used for performing static analyses on EVM-compatible smart contracts.
+* `smart_contract_compiler`: Useful for compiling EVM-compatible smart contracts. Returns the path to a file containing the bytecode.
+* `smart_contract_identifier`: Used for identifying a contract on an EVM blockchain. Given an address, this tool returns whether it is a contract or not. If it is a proxy, returns its implementation address.
+* `smart_contract_tester`: Used for writing EVM-compatible smart contracts test cases. Returns the path to the `.js` file containing the test.
+* `smart_contract_writer`: Used for writing EVM-compatible smart contracts given a title and description. Returns the path to the `.sol` file.
 
 Our roadmap is ambitious, we plan to invest in:
-1.  <TODO>
-2.  <TODO>
-3.  <TODO>
+1.  Additional tools for the AI agents, with a specific focus on expanding support for a wider range of tests and audit use cases.
+2.  A frontend and IDE for a more interactive and tigher developer loop.
+3.  Support for open-source models to make A(i)udit a _true_ public good.
+4.  Extending the product offering to support specific workflows unique to auditors, and perhaps even web2 use cases.
 
-[1] https://cyvers.ai/2023-web3-security-report
 
 # Usage
 ## Installation
