@@ -4,3 +4,6 @@ from .smart_contract_identifier.tool import IdentifyContractTool
 from .smart_contract_writer.tool import SmartContractWriterTool
 from .smart_contract_tester.tool import SmartContractTesterTool
 from .slither_test_analysis.tool import SlitherTestTool
+from .mythril_tool.tool import MythrilTool
+from .view_test_tool_result.tool import ViewTestToolsResult
+from .smart_contract_fuzzytester.tool import SmartContractFuzzyTesterTool

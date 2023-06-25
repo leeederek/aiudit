@@ -22,12 +22,16 @@ def get_structured_chat_agent_from_tools(
     model_name: str = "gpt-3.5-turbo",
     temperature: float = 0.0,
 ):
-    prefix = """Have a conversation with a human, answering the following questions as best you can. You have access to the following tools:"""
+    prefix = """Have a conversation with a human, 
+    answering the following questions as best you can. 
+    You have access to the following tools:
+    """
     suffix = """Begin!"
 
     {chat_history}
     Question: {input}
     {agent_scratchpad}"""
+
     prompt = StructuredChatAgent.create_prompt(
         tools=tools,
         prefix=prefix,
