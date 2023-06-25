@@ -6,7 +6,7 @@ A(i)udit is an open-source tool that gracefully adds security best practices _ea
 Engineers can use natural language to author, audit, and deploy - all from a single platform.
 
 # :runner: Motivation (Why?)
-In 2022 alone, over $3.6 billion USD was lost due to exploits & hacks from 167 major security incidents - with a *whopping 51.5% of these being from audited protocols!* ([Global Web3 Security Report 2022 by BEOSIN & LegalDAO](https://beosin.com/resources/Global_Web3_Security_Report_2022_.pdf)). One can conclude that audits are undeniably valuable still, but with a growing developer base & rising costs of audits, its evident that our web3 future cannot rely on audits alone.
+In 2022 alone, over $3.6 billion USD was lost due to exploits & hacks from 167 major security incidents - with a *whopping 51.5% of these being from audited protocols!* ([Global Web3 Security Report 2022 by BEOSIN & LegalDAO](https://beosin.com/resources/Global_Web3_Security_Report_2022_.pdf)). One can conclude that audits are undeniably valuable still, but with a growing developer base & rising costs of audits, its evident that the security of our web3 future cannot rely on audits alone.
 
 __And so, how do we make it easier for developers be part of the solution & incorporate a security-first mindset in their developer loop?__
 
