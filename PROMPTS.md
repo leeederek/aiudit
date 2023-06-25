@@ -12,3 +12,15 @@ You: That will be great
 aiudittooltool: Glad to hear that! Is there anything else I can help you with?
 
 You: Please deploy this contract to the Gnosis Chiado network and share the address
+
+You: Run Mythril test on the smart contract at this local path /Users/yuchenpeng/ethwaterloo/aiudit/smart_contracts/javacoin.sol
+
+
+You: Please create an erc20 smart contract and deploy this contract to the ethereum_privatenet and share the address
+
+
+
+Create an erc20 token on Gnosis chiado and  give me the contract address 
+
+
+create the fuzzy tests for the contract and

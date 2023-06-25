@@ -14,7 +14,8 @@ from aiudittool.tools import (
     SmartContractWriterTool,
     SmartContractTesterTool,
     MythrilTool,
-    ViewTestToolsResult
+    ViewTestToolsResult,
+    SmartContractFuzzyTesterTool,
 )
 
 install(suppress=[click])
@@ -33,7 +34,7 @@ FULL_TOOLSET = [
     SmartContractDeployerTool(),
     SmartContractTesterTool(),
     MythrilTool(),
-    ViewTestToolsResult(),
+    SmartContractFuzzyTesterTool(),
 ]
 
 SMART_CONTRACT_TOOLSET = [
@@ -41,7 +42,7 @@ SMART_CONTRACT_TOOLSET = [
     SmartContractCompilerTool(),
     SmartContractDeployerTool(),
     SmartContractTesterTool(),
-    ViewTestToolsResult(),
+    SmartContractFuzzyTesterTool(),
 ]
 
 FULL_TOOLSET = [

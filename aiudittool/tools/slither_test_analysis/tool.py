@@ -43,12 +43,6 @@ class  SlitherTestTool(BaseTool):
 
         solc_version = '0.8.9'  # Specify the desired Solidity version
 
-        library_paths = [
-            '/Users/yuchenpeng/a-i-udit-private/aiudittool/node_modules/@openzeppelin',
-            '/Users/yuchenpeng/a-i-udit-private/aiudittool/node_modules/@chainlink'
-        ] 
-
-        # solc_args = '--allow-paths ' + ' '.join(library_paths)
         solc_args = "--solc_remaps " + " @openzeppelin/=$(pwd)/node_modules/@openzeppelin/"
 
         slither = Slither(path_to_sol_file)

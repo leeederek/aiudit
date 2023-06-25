@@ -28,7 +28,7 @@ class ViewTestToolsResult(BaseTool):
     ) -> str:
 
         process = subprocess.run(
-            ['node', '/Users/yuchenpeng/ethwaterloo/aiudit/aiudittool/storage/put-files.js', "--token=", path_to_text_file], 
+            ['node', '/Users/yuchenpeng/ethwaterloo/aiudit/aiudittool/storage/put-files.js', "--token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweEUzMWQ2YWRjQTk4ZTUxQjZGQjlmRDhiNjkxRTQ0ZDBCZTBkZURBY2UiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2ODc2NDIwMTYzMTgsIm5hbWUiOiJoYWNrYXRob24ifQ.DK14ojYZYk-ytVGl0ffXvaZM94piSobodvVzZ4ZMaNM", path_to_text_file], 
             stdout=subprocess.PIPE, 
             universal_newlines=True
         )
