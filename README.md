@@ -6,9 +6,9 @@ A(i)udit is an open-source tool that gracefully adds security best practices _ea
 Engineers can use natural language to author, audit, and deploy - all from a single platform.
 
 # :runner: Motivation (Why?)
-In 2022 alone, over $3.6 billion USD was lost due to exploits & hacks from 167 major security incidents - with a *whopping 48.5% of these being from unaudited protocols!* ([Global Web3 Security Report 2022 by BEOSIN & LegalDAO](https://beosin.com/resources/Global_Web3_Security_Report_2022_.pdf)). Still, the most common developer loop today is to write a smart contract & run a series of short unit tests against it before "tossing it over the wall" to auditing firms. 
+In 2022 alone, over $3.6 billion USD was lost due to exploits & hacks from 167 major security incidents - with a *whopping 51.5% of these being from audited protocols!* ([Global Web3 Security Report 2022 by BEOSIN & LegalDAO](https://beosin.com/resources/Global_Web3_Security_Report_2022_.pdf)). One can conclude that audits are undeniably valuable still, but with a growing developer base & rising costs of audits, its evident that our web3 future cannot rely on audits alone.
 
-__Its clear: building with security in mind has _never_ been more important - but how do we make it easier for developers to take incorporate a security-first mindset in their developer loop?__
+__And so, how do we make it easier for developers be part of the solution & incorporate a security-first mindset in their developer loop?__
 
 Our answer is A(i)udit: a platform to help both developers & auditors to author, audit, and deploy smart contracts using natural language and AI agents. 
 * For developers, A(i)udit "shifts-left" security best practices by enabling security-specific testing and rapid prototyping to take place much earlier in the development lifecycle. **Get ramped up & familiar with security and auditing tools in your dev loop _before_ commissioning a (costly) audit.**
